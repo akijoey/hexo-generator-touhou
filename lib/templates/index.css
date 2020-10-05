@@ -1,0 +1,63 @@
+.touhou {
+	display: flex;
+	max-width: 800px;
+	height: 300px;
+}
+
+.touhou:hover img {
+  transform: scale(1.1);
+}
+
+.touhou-cover {
+  flex-shrink: 0;
+  width: 55%;
+  overflow: hidden;
+}
+
+.touhou-cover-left {
+  border-radius: 0 10px 10px 0;
+}
+
+.touhou-cover-right {
+  border-radius: 10px 0 0 10px;
+}
+
+.touhou-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .6s;
+}
+
+.touhou-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 30px;
+  line-height: initial; /* todo */
+}
+
+.touhou-info-left {
+  order: -1;
+  text-align: left;
+}
+
+.touhou-info-right {
+  text-align: right;
+}
+
+.touhou-info-title {
+  color: #504e4e;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.touhou-info-content {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.touhou-info-more {
+  color: #666;
+  font-size: 20px;
+}
