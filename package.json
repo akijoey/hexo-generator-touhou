@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-touhou",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Touhou generator plugin for Hexo.",
   "main": "index.js",
   "files": [
