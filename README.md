@@ -1,4 +1,4 @@
-# hexo-generator-tag
+# hexo-generator-touhou
 
 [![npm][npm-image]][npm-url]
 [![build][build-image]][build-url]
