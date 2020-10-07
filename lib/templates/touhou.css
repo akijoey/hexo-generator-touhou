@@ -1,0 +1,89 @@
+.touhou {
+  width: 1000px;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.touhou-canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 50px;
+}
+
+.touhou-content p {
+  font-size: 1.1em;
+}
+
+.touhou-content p:not([align]) {
+  text-indent: 2em;
+}
+
+div:fullscreen {
+  display: grid;
+  place-content: center;
+}
+
+div:fullscreen canvas#canvas{
+  border-radius: 0;
+}
+
+#canvas {
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px 12px rgba(7, 17, 27, .15);
+}
+
+#control {
+  position: absolute;
+  width: 640px;
+  padding: 0 5px;
+  color: #fff;
+  text-align: right;
+}
+
+#control i {
+  margin-right: 5px;
+}
+
+#loading {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+}
+
+#spinner {
+	height: 30px;
+	width: 30px;
+  border-top: 5px solid rgb(120, 120, 120);
+	border-right: 5px solid rgb(235, 235, 235);
+	border-bottom: 5px solid rgb(235, 235, 235);
+	border-left: 5px solid rgb(235, 235, 235);
+	border-radius: 100%;
+  background-color: #49b1f5;
+	animation: rotation .8s linear infinite;
+}
+
+@keyframes rotation {
+	from {
+    transform: rotate(0deg);
+  }
+	to {
+    transform: rotate(360deg);
+  }
+}
+
+#status {
+  margin-left: 10px;
+  color: rgb(120, 120, 120);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#progress {
+  position: absolute;
+  bottom: 70px;
+	height: 20px;
+	width: 300px;
+}
