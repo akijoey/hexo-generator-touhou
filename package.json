@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-touhou",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Touhou generator plugin for Hexo.",
   "main": "index.js",
   "files": [
@@ -11,7 +11,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint --ignore-pattern lib/data .",
+    "lint": "eslint --ignore-pattern dist .",
     "test": "npm run lint"
   },
   "repository": {
