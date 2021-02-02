@@ -11,8 +11,11 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint --ignore-pattern dist .",
-    "test": "npm run lint"
+    "lint:script": "eslint --ignore-pattern dist .",
+    "lint:style": "stylelint -i .gitignore **/*.css",
+    "lint": "npm run lint:script && npm run lint:style",
+    "test": "npm run lint",
+    "format": "prettier -w ."
   },
   "repository": {
     "type": "git",
@@ -22,16 +25,43 @@
     "hexo",
     "touhou"
   ],
-  "author": "AkiJoey",
+  "author": "AkiJoey <akijoey@akijoey.com> (https://akijoey.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/akijoey/hexo-generator-touhou/issues"
   },
   "homepage": "https://github.com/akijoey/hexo-generator-touhou#readme",
   "devDependencies": {
-    "eslint": "^7.7.0"
+    "@akijoey/eslint-config": "latest",
+    "@akijoey/prettier-config": "latest",
+    "@akijoey/stylelint-config": "latest",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.14.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0"
   },
   "dependencies": {
     "ejs": "^3.1.5"
+  },
+  "stylelint": {
+    "extends": "@akijoey/stylelint-config"
+  },
+  "prettier": "@akijoey/prettier-config",
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,json,yml,md}": "prettier -w"
   }
 }
